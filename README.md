@@ -40,6 +40,8 @@ The full project includes:
 
 <br>
 ### VERSION HISTORY
+**Version 2.0.0**
+* Support for new Swift, iOS, and Xcode 10.
 
 **Version 1.0.0**
 * Initial release
