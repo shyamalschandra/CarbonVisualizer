@@ -3,9 +3,10 @@
 
 
 <br>
-CarbonVisualizer Version 1.0.0 (08 October 2014)
+CarbonVisualizer Version 2.0.0 (22 January 2018)
 
 Created by Ricardo Rendon Cepeda
+Updated by Shyamal Chandra
 
 <https://www.linkedin.com/in/rendoncepeda>
 </br>
@@ -15,7 +16,7 @@ Created by Ricardo Rendon Cepeda
 ### About
 Learn how to easily create 3D scenes in your iOS apps or games in this Scene Kit tutorial!
 
-This is an abbreviated version of a chapter from iOS 8 by Tutorials released as part of the iOS 8 Feast to give you a sneak peek of what’s inside the book. We hope you enjoy!
+This is an abbreviated version of a chapter from iOS 12+ by Tutorials released as part of the iOS 12+ Feast to give you a sneak peek of what’s inside the book. We hope you enjoy!
 
 The full tutorial is available at:
 
@@ -27,7 +28,7 @@ The full tutorial is available at:
 ### Accompanying Files
 The full project includes:
 
-* *Xcode:* A full Xcode project ready to build and run!
+* *Xcode:* A full Xcode 10+ project ready to build and run!
 </br>
 
 
