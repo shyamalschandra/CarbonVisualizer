@@ -26,29 +26,29 @@ import SceneKit
 class Atoms {
   class func carbonAtom() -> SCNGeometry {
     let carbonAtom = SCNSphere(radius: 1.70)
-    carbonAtom.firstMaterial!.diffuse.contents = UIColor.darkGrayColor()
-    carbonAtom.firstMaterial!.specular.contents = UIColor.whiteColor()
+    carbonAtom.firstMaterial!.diffuse.contents = UIColor.darkGray
+    carbonAtom.firstMaterial!.specular.contents = UIColor.white
     return carbonAtom
   }
   
   class func hydrogenAtom() -> SCNGeometry {
     let hydrogenAtom = SCNSphere(radius: 1.20)
-    hydrogenAtom.firstMaterial!.diffuse.contents = UIColor.lightGrayColor()
-    hydrogenAtom.firstMaterial!.specular.contents = UIColor.whiteColor()
+    hydrogenAtom.firstMaterial!.diffuse.contents = UIColor.lightGray
+    hydrogenAtom.firstMaterial!.specular.contents = UIColor.white
     return hydrogenAtom
   }
   
   class func oxygenAtom() -> SCNGeometry {
     let oxygenAtom = SCNSphere(radius: 1.52)
-    oxygenAtom.firstMaterial!.diffuse.contents = UIColor.redColor()
-    oxygenAtom.firstMaterial!.specular.contents = UIColor.whiteColor()
+    oxygenAtom.firstMaterial!.diffuse.contents = UIColor.red
+    oxygenAtom.firstMaterial!.specular.contents = UIColor.white
     return oxygenAtom
   }
   
   class func fluorineAtom() -> SCNGeometry {
     let fluorineAtom = SCNSphere(radius: 1.47)
-    fluorineAtom.firstMaterial!.diffuse.contents = UIColor.yellowColor()
-    fluorineAtom.firstMaterial!.specular.contents = UIColor.whiteColor()
+    fluorineAtom.firstMaterial!.diffuse.contents = UIColor.yellow
+    fluorineAtom.firstMaterial!.specular.contents = UIColor.white
     return fluorineAtom
   }
   

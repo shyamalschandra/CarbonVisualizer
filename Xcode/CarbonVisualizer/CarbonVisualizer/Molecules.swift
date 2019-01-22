@@ -25,27 +25,27 @@ import SceneKit
 
 class Molecules {
   class func methaneMolecule() -> SCNNode {
-    var methaneMolecule = SCNNode()
+    let methaneMolecule = SCNNode()
     
     // 1 Carbon
-    let carbonNode1 = nodeWithAtom(Atoms.carbonAtom(), molecule: methaneMolecule, position: SCNVector3Make(0, 0, 0))
+    let carbonNode1 = nodeWithAtom(atom: Atoms.carbonAtom(), molecule: methaneMolecule, position: SCNVector3Make(0, 0, 0))
     
     // 4 Hydrogen
-    let hydrogenNode1 = nodeWithAtom(Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(-4, 0, 0))
-    let hydrogenNode2 = nodeWithAtom(Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(+4, 0, 0))
-    let hydrogenNode3 = nodeWithAtom(Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(0, -4, 0))
-    let hydrogenNode4 = nodeWithAtom(Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(0, +4, 0))
+    let hydrogenNode1 = nodeWithAtom(atom: Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(-4, 0, 0))
+    let hydrogenNode2 = nodeWithAtom(atom: Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(+4, 0, 0))
+    let hydrogenNode3 = nodeWithAtom(atom: Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(0, -4, 0))
+    let hydrogenNode4 = nodeWithAtom(atom: Atoms.hydrogenAtom(), molecule: methaneMolecule, position: SCNVector3Make(0, +4, 0))
     
     return methaneMolecule
   }
   
   class func ethanolMolecule() -> SCNNode {
-    var ethanolMolecule = SCNNode()
+    let ethanolMolecule = SCNNode()
     return ethanolMolecule
   }
   
   class func ptfeMolecule() -> SCNNode {
-    var ptfeMolecule = SCNNode()
+    let ptfeMolecule = SCNNode()
     return ptfeMolecule
   }
   

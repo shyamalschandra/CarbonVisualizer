@@ -39,7 +39,7 @@ class ViewController: UIViewController {
       super.viewDidLoad()
   }
   
-  override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
     sceneSetup()
@@ -54,13 +54,13 @@ class ViewController: UIViewController {
     
     let ambientLightNode = SCNNode()
     ambientLightNode.light = SCNLight()
-    ambientLightNode.light!.type = SCNLightTypeAmbient
+    ambientLightNode.light!.type = SCNLight.LightType.ambient
     ambientLightNode.light!.color = UIColor(white: 0.67, alpha: 1.0)
     scene.rootNode.addChildNode(ambientLightNode)
     
     let omniLightNode = SCNNode()
     omniLightNode.light = SCNLight()
-    omniLightNode.light!.type = SCNLightTypeOmni
+    omniLightNode.light!.type = SCNLight.LightType.omni
     omniLightNode.light!.color = UIColor(white: 0.75, alpha: 1.0)
     omniLightNode.position = SCNVector3Make(0, 50, 50)
     scene.rootNode.addChildNode(omniLightNode)
@@ -70,20 +70,20 @@ class ViewController: UIViewController {
     cameraNode.position = SCNVector3Make(0, 0, 25)
     scene.rootNode.addChildNode(cameraNode)
     
-    let panRecognizer = UIPanGestureRecognizer(target: self, action: "panGesture:")
+    let panRecognizer = UIPanGestureRecognizer(target: self, action: Selector(("panGesture:")))
     sceneView.addGestureRecognizer(panRecognizer)
     
     sceneView.scene = scene
   }
   
   func panGesture(sender: UIPanGestureRecognizer) {
-    let translation = sender.translationInView(sender.view!)
-    var newAngle = (Float)(translation.x)*(Float)(M_PI)/180.0
+    let translation = sender.translation(in: sender.view!)
+    var newAngle = (Float)(translation.x)*(Float)(Double.pi)/180.0
     newAngle += currentAngle
     
     geometryNode.transform = SCNMatrix4MakeRotation(newAngle, 0, 1, 0)
     
-    if(sender.state == UIGestureRecognizerState.Ended) {
+    if(sender.state == UIGestureRecognizer.State.ended) {
       currentAngle = newAngle
     }
   }
@@ -114,14 +114,16 @@ class ViewController: UIViewController {
   }
   
   // MARK: Style
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return UIStatusBarStyle.LightContent
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        get {
+            return UIStatusBarStyle.lightContent
+        }
   }
-  
-  // MARK: Transition
-  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-    sceneView.stop(nil)
-    sceneView.play(nil)
-  }
+
+      // MARK: Transition
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        sceneView.stop(nil)
+        sceneView.play(nil)
+    }
 }
